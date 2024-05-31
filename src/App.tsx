@@ -4,12 +4,14 @@ import NavBar from "./components/navbar";
 
 const App = () => {
     return ( 
-    <main>
-        <h1>TODO APP</h1>
+        <main className="min-w-full min-h-screen flex flex-col items-center ">
+        <h1 className="font-extrabold">TODO APP</h1>
         <NavBar />
         <AddTodoForm />
     </main>
     );
 }
+
+
  
 export default App;
