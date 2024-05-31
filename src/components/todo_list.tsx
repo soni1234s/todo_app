@@ -26,8 +26,10 @@ const TodoList = () => {
      }
      
     return <>{
-        filteredData.map((todo) => {
-        return  <li key={todo.id} className="list-none flex justify-between py-4 items-center">
+        filteredData.map((todo, index) => {
+        return   <li key={todo.id} className={`list-none ${todo.isCompleted ? "flex justify-between items-center" :""} py-2 flex-wrap ${
+            index !== filteredData.length - 1 ? 'border-b border-gray-300' : ''
+          }`}>
             <input type="checkbox" id={`todo-${todo.id}`}  checked = {todo.isCompleted} onChange={() => {
                 toggleTodo(todo.id);
             }} />
@@ -37,7 +39,12 @@ const TodoList = () => {
             {
                 todo.isCompleted && (<button type="button" onClick={() => deleteTodo(todo.id)} className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700">Delete</button>)
             }
+
+           
         </li>
+
+
+
         })
 }
 </>
