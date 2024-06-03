@@ -8,7 +8,9 @@ const AddTodoForm = () => {
 
     function handleFormSubmit(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault()
-        handleAddTodo(todo)
+        if(todo !== ""){
+            handleAddTodo(todo)
+       }
         setTodo("")
     }
 
